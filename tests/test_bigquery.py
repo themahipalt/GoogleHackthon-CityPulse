@@ -5,3 +5,5 @@ client = BigQueryClient()
 client.test_connection()
 
 client.create_complaints_table()
+
+

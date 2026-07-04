@@ -48,3 +48,18 @@ class BigQueryClient:
         )
 
         print(f"✅ Table ready : {table.table_id}")
+
+
+# Execute Query
+    def execute_query(self, query: str):
+
+        query_job = self.client.query(query)
+
+        results = query_job.result()
+
+        rows = []
+
+        for row in results:
+            rows.append(dict(row))
+
+        return rows
