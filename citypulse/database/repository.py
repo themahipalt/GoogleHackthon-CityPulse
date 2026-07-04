@@ -1,8 +1,7 @@
 from citypulse.database import connection
 from citypulse.database.connection import get_connection
-from citypulse.graders.schemas import ComplaintReport, TriageResult
-from citypulse.graders.schemas import ComplaintReport
-
+from citypulse.schemas.complaint import ComplaintReport
+from citypulse.graders.schemas import TriageResult
 
 class ComplaintRepository:
 

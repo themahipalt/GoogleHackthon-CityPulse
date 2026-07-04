@@ -1,4 +1,5 @@
 from citypulse.database.init_db import init_db
+import uuid
 from citypulse.database.repository import ComplaintRepository
 from citypulse.graders.schemas import (
     ComplaintReport,
@@ -13,8 +14,10 @@ def test_save_complaint():
 
     repo = ComplaintRepository()
 
+  
+
     complaint = ComplaintReport(
-        report_id="TEST001",
+        report_id=f"TEST-{uuid.uuid4().hex[:8]}",
         raw_text="Huge pothole near MG Road",
         image_url=None,
         latitude=12.97,

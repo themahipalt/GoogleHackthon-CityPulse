@@ -4,7 +4,7 @@ import uuid
 from google import genai
 
 from citypulse.core.config import settings
-from citypulse.graders.schemas import ComplaintReport
+from citypulse.schemas.complaint import ComplaintReport
 
 client = genai.Client(api_key=settings.GEMINI_API_KEY)
 

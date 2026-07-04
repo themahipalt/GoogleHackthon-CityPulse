@@ -1,5 +1,6 @@
 from citypulse.cloud.bigquery import BigQueryClient
 from citypulse.database.repository import ComplaintRepository
+from citypulse.schemas.complaint import ComplaintReport
 
 
 class BigQueryUploader:
