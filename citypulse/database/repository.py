@@ -1,5 +1,7 @@
+from citypulse.database import connection
 from citypulse.database.connection import get_connection
 from citypulse.graders.schemas import ComplaintReport, TriageResult
+from citypulse.graders.schemas import ComplaintReport
 
 
 class ComplaintRepository:
@@ -80,3 +82,44 @@ class ComplaintRepository:
         conn.close()
 
         return row
+    
+
+    def get_all_complaints(self) -> list[ComplaintReport]:
+
+        connection = get_connection()
+
+        cursor = connection.cursor()
+
+        cursor.execute(
+            """
+            SELECT
+                report_id,
+                raw_text,
+                image_url,
+                latitude,
+                longitude,
+                ward
+            FROM complaints
+            """
+        )
+
+        rows = cursor.fetchall()
+
+        connection.close()
+
+        complaints = []
+
+        for row in rows:
+
+            complaints.append(
+                ComplaintReport(
+                    report_id=row["report_id"],
+                    raw_text=row["raw_text"],
+                    image_url=row["image_url"],
+                    latitude=row["latitude"],
+                    longitude=row["longitude"],
+                    ward=row["ward"],
+                )
+            )
+
+        return complaints
