@@ -16,3 +16,19 @@ data/*.db
 
 # VS Code
 .vscode/
+
+# ADK
+session.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+
+# Environment
+.env
+
+# Pytest
+.pytest_cache/
