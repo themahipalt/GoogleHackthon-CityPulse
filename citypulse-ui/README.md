@@ -1,59 +1,269 @@
-# CitypulseUi
+# 🎨 CityPulse UI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.18.
+> **Angular 21 Frontend for the CityPulse AI-Powered Decision Intelligence Platform**
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-21-red)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Angular Material](https://img.shields.io/badge/Angular-Material-blue)
+![Status](https://img.shields.io/badge/Status-In%20Development-orange)
 
-To start a local development server, run:
+---
+
+# 📖 Overview
+
+CityPulse UI is the modern Angular frontend for the **CityPulse** platform.
+
+It provides an intuitive dashboard for city administrators to:
+
+- 📊 Monitor complaint analytics
+- 📈 View complaint forecasts
+- 💡 Receive AI-generated recommendations
+- 🤖 Interact with an AI Assistant
+- 📍 Track complaint trends across city wards
+
+The frontend communicates with the **FastAPI backend** and **Google ADK AI Orchestrator** to provide real-time decision intelligence.
+
+---
+
+# 🚀 Features
+
+## ✅ Current
+
+- Angular 21
+- Standalone Components
+- Angular Material
+- Component-Based Architecture
+- Lazy Loaded Routes
+- Responsive Layout
+
+---
+
+## 🚧 Upcoming
+
+- Dashboard
+- Analytics Charts
+- Forecast Visualization
+- AI Chat
+- Recommendation Panel
+- Complaint Management
+- Dark Mode
+- Authentication
+- Mobile Responsive UI
+
+---
+
+# 🏗️ Architecture
+
+```text
+                     Angular 21
+
+                            │
+
+                            ▼
+
+                  Component-Based UI
+
+                            │
+
+        ┌───────────────────┼───────────────────┐
+
+        ▼                   ▼                   ▼
+
+   Dashboard           Analytics            AI Chat
+
+        │                   │                   │
+
+        └───────────────────┼───────────────────┘
+
+                            ▼
+
+                    Angular Services
+
+                            │
+
+                            ▼
+
+                      FastAPI Backend
+
+                            │
+
+                            ▼
+
+                    Google ADK Agents
+
+                            │
+
+                            ▼
+
+       Gemini • BigQuery • BigQuery ML
+```
+
+---
+
+# 📂 Project Structure
+
+```text
+src/
+
+app/
+
+├── core/
+│   ├── guards/
+│   ├── models/
+│   └── services/
+│
+├── layout/
+│   ├── navbar/
+│   ├── sidebar/
+│   └── shell/
+│
+├── shared/
+│   ├── components/
+│   └── pipes/
+│
+├── features/
+│   ├── dashboard/
+│   ├── analytics/
+│   ├── forecast/
+│   ├── recommendations/
+│   ├── complaints/
+│   └── chat/
+│
+├── app.config.ts
+├── app.routes.ts
+└── app.ts
+```
+
+---
+
+# 🎨 Planned Dashboard
+
+```text
++-------------------------------------------------------------+
+| CityPulse                                   👤 Administrator |
++-------------------------------------------------------------+
+
++-------------------------------------------------------------+
+| 📊 Total Complaints | 🚨 High Severity | 📍 Top Ward         |
++-------------------------------------------------------------+
+
++---------------------------+---------------------------------+
+| Complaint Trend           | Complaint Categories            |
++---------------------------+---------------------------------+
+
++-------------------------------------------------------------+
+| 💡 AI Recommendation                                      |
++-------------------------------------------------------------+
+
++-------------------------------------------------------------+
+| 🤖 AI Assistant                                           |
++-------------------------------------------------------------+
+```
+
+---
+
+# 🔌 Backend Integration
+
+The frontend communicates with the CityPulse backend through REST APIs.
+
+| Endpoint | Purpose |
+|----------|---------|
+| POST `/chat` | AI Assistant |
+| POST `/triage` | Complaint Classification |
+| GET `/analytics` | Complaint Analytics *(Upcoming)* |
+| GET `/forecast` | Forecast Data *(Upcoming)* |
+| GET `/recommendation` | AI Recommendation *(Upcoming)* |
+
+---
+
+# 🛠️ Technology Stack
+
+| Layer | Technology |
+|--------|------------|
+| Framework | Angular 21 |
+| Language | TypeScript |
+| UI | Angular Material |
+| Styling | SCSS |
+| Routing | Angular Router |
+| HTTP | HttpClient |
+| Charts | ApexCharts *(Planned)* |
+| State Management | Angular Signals |
+| Icons | Angular Material Icons |
+
+---
+
+# 🚀 Getting Started
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Run Development Server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The application will be available at:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Build for Production
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Run Tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+# 🎯 Development Roadmap
 
-```bash
-ng e2e
-```
+- Responsive Dashboard
+- Analytics Page
+- Forecast Page
+- Recommendation Page
+- AI Chat Interface
+- Charts & Visualizations
+- Dark Theme
+- Authenticationng g c layout/shell --standalone --skip-tests
+- Cloud Deployment
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+# 🤝 Contributing
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Contributions, suggestions, and feedback are welcome.
+
+Please open an issue or submit a pull request.
+
+---
+
+# 👨‍💻 Author
+
+**Mahipal Thakur**
+
+Software Engineer
+
+Google Cloud Gen AI Hackathon 2026
+
+---
+
+# ⭐ Support
+
+If you like this project, please consider giving it a ⭐ on GitHub.
