@@ -1,34 +1,22 @@
-# Virtual Environment
-.venv/
-
-# Python
-__pycache__/
-*.py[cod]
-
-# Environment Variables
+# Environment
 .env
-
-# Pytest
-.pytest_cache/
-
-# Database
-data/*.db
-
-# VS Code
-.vscode/
-
-# ADK
-session.db
+.venv/
 
 # Python
 __pycache__/
 *.pyc
-
-# Virtual env
-.venv/
-
-# Environment
-.env
-
-# Pytest
 .pytest_cache/
+
+# ADK
+.adk/
+session.db
+
+# SQLite
+*.db
+*.sqlite
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
