@@ -1,1 +1,142 @@
-<p>dashboard works!</p>
+<h1>Dashboard</h1>
+
+<p class="subtitle">
+    Welcome back, Mahipal 👋
+</p>
+
+<div class="stats">
+
+    <!-- Total Complaints -->
+    <mat-card>
+
+        <mat-card-title>
+            Total Complaints
+        </mat-card-title>
+
+        <mat-card-content>
+
+            <h2>{{ dashboard?.total_complaints ?? 0 }}</h2>
+
+        </mat-card-content>
+
+    </mat-card>
+
+    <!-- High Severity -->
+    <mat-card>
+
+        <mat-card-title>
+            High Severity
+        </mat-card-title>
+
+        <mat-card-content>
+
+            <h2>{{ dashboard?.high_severity ?? 0 }}</h2>
+
+        </mat-card-content>
+
+    </mat-card>
+
+    <!-- Top Ward -->
+    <mat-card>
+
+        <mat-card-title>
+            Top Ward
+        </mat-card-title>
+
+        <mat-card-content>
+
+            <h2>{{ dashboard?.top_ward ?? '-' }}</h2>
+
+        </mat-card-content>
+
+    </mat-card>
+
+    <!-- Forecast -->
+    <mat-card>
+
+        <mat-card-title>
+            Forecast
+        </mat-card-title>
+
+        <mat-card-content>
+
+            <h2>{{ dashboard?.forecast ?? 0 }}</h2>
+
+        </mat-card-content>
+
+    </mat-card>
+
+</div>
+
+<!-- Complaint Trend -->
+
+<div class="chart-card">
+
+    <mat-card>
+
+        <mat-card-title>
+
+            📈 Complaint Trend
+
+        </mat-card-title>
+
+        <mat-card-content>
+
+            <div class="chart-placeholder">
+
+                Chart Coming Soon...
+
+            </div>
+
+        </mat-card-content>
+
+    </mat-card>
+
+</div>
+
+<!-- Bottom Section -->
+
+<div class="bottom-grid">
+
+    <mat-card>
+
+        <mat-card-title>
+
+            📊 Complaint Categories
+
+        </mat-card-title>
+
+        <mat-card-content>
+
+            <div class="chart-placeholder">
+
+                Pie Chart Coming Soon...
+
+            </div>
+
+        </mat-card-content>
+
+    </mat-card>
+
+    <mat-card>
+
+        <mat-card-title>
+
+            💡 AI Recommendation
+
+        </mat-card-title>
+
+        <mat-card-content>
+
+            <p>
+
+                AI recommendations will appear here based on complaint trends,
+                forecasts and analytics.
+
+            </p>
+
+        </mat-card-content>
+
+    </mat-card>
+
+</div>

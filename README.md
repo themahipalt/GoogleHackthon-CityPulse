@@ -2,6 +2,7 @@
 
 # AI-Powered Decision Intelligence Platform for Smart Cities
 
+Start : uv run uvicorn citypulse.main:app --reload
 > 🏆 Google Cloud Gen AI Hackathon 2026 Submission
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue)
