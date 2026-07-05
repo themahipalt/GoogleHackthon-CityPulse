@@ -3,6 +3,7 @@ import asyncio
 from citypulse.agents.generator_agent import generate_complaint
 from citypulse.database.repository import ComplaintRepository
 from citypulse.database.init_db import init_db
+from citypulse.utils.date_generator import random_date_last_n_days
 
 
 async def main():
@@ -11,7 +12,7 @@ async def main():
 
     repository = ComplaintRepository()
 
-    TOTAL_RECORDS = 10
+    TOTAL_RECORDS = 100
     MAX_RETRIES = 3
 
     success_count = 0
@@ -25,7 +26,12 @@ async def main():
 
                 complaint = await generate_complaint()
 
-                repository.save_complaint(complaint)
+                created_at = random_date_last_n_days(90)
+
+                repository.save_complaint(
+                    complaint,
+                    created_at=created_at,
+                )
 
                 success_count += 1
 

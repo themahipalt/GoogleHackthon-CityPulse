@@ -1,6 +1,5 @@
 from citypulse.cloud.bigquery import BigQueryClient
 from citypulse.database.repository import ComplaintRepository
-from citypulse.schemas.complaint import ComplaintReport
 
 
 class BigQueryUploader:
@@ -31,7 +30,11 @@ class BigQueryUploader:
                     "latitude": complaint.latitude,
                     "longitude": complaint.longitude,
                     "ward": complaint.ward,
-                    "created_at": None,
+                    "created_at": (
+                        complaint.created_at.isoformat()
+                        if complaint.created_at
+                        else None
+                    ),
                 }
             )
 

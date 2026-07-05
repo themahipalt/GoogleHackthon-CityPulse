@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from pydantic import BaseModel
 
 
@@ -14,3 +16,5 @@ class ComplaintReport(BaseModel):
     longitude: float
 
     ward: str
+
+    created_at: datetime | None = None

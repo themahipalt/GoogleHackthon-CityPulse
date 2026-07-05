@@ -12,9 +12,9 @@ GROUP BY day
 ORDER BY day
 """
 
-query_job = client.client.query(query)
+rows = client.client.query(query).result()
 
-results = query_job.result()
+print("\nComplaint Distribution\n")
 
-for row in results:
-    print(dict(row.items()))
+for row in rows:
+    print(row.day, row.total)

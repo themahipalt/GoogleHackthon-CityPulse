@@ -1,13 +1,26 @@
-from citypulse.database import connection
+from datetime import datetime
+
 from citypulse.database.connection import get_connection
 from citypulse.schemas.complaint import ComplaintReport
 from citypulse.graders.schemas import TriageResult
 
+
 class ComplaintRepository:
 
-    def save_complaint(self, complaint: ComplaintReport):
+    def save_complaint(
+        self,
+        complaint: ComplaintReport,
+        created_at: datetime | None = None,
+    ):
         conn = get_connection()
         cursor = conn.cursor()
+
+        # Use provided timestamp or fallback to current time
+        timestamp = (
+            created_at.strftime("%Y-%m-%d %H:%M:%S")
+            if created_at
+            else None
+        )
 
         cursor.execute(
             """
@@ -20,7 +33,7 @@ class ComplaintRepository:
                 ward,
                 created_at
             )
-            VALUES (?, ?, ?, ?, ?, ?, datetime('now'))
+            VALUES (?, ?, ?, ?, ?, ?, COALESCE(?, datetime('now')))
             """,
             (
                 complaint.report_id,
@@ -29,6 +42,7 @@ class ComplaintRepository:
                 complaint.latitude,
                 complaint.longitude,
                 complaint.ward,
+                timestamp,
             ),
         )
 
@@ -81,7 +95,6 @@ class ComplaintRepository:
         conn.close()
 
         return row
-    
 
     def get_all_complaints(self) -> list[ComplaintReport]:
 
@@ -97,7 +110,8 @@ class ComplaintRepository:
                 image_url,
                 latitude,
                 longitude,
-                ward
+                ward,
+                created_at
             FROM complaints
             """
         )
@@ -118,6 +132,7 @@ class ComplaintRepository:
                     latitude=row["latitude"],
                     longitude=row["longitude"],
                     ward=row["ward"],
+                    created_at=row["created_at"],
                 )
             )
 
