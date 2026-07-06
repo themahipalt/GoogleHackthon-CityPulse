@@ -11,3 +11,9 @@ service = DashboardService()
 async def dashboard():
 
     return await service.get_dashboard()
+
+
+@router.get("/dashboard/trend")
+async def dashboard_trend():
+
+    return await service.get_trend()

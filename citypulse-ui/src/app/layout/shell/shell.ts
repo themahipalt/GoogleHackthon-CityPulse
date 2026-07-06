@@ -15,4 +15,8 @@ import { SidebarComponent } from '../sidebar/sidebar';
   templateUrl: './shell.html',
   styleUrl: './shell.css'
 })
-export class ShellComponent {}
+export class ShellComponent {
+     constructor() {
+        console.log("Shell Loaded");
+    }
+}

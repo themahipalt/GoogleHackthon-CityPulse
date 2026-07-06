@@ -1,5 +1,4 @@
 from citypulse.database.dashboard_repository import DashboardRepository
-from citypulse.schemas.dashboard import DashboardResponse
 
 
 class DashboardService:
@@ -10,14 +9,13 @@ class DashboardService:
 
     async def get_dashboard(self):
 
-        return DashboardResponse(
+        return {
+            "total_complaints": self.repository.get_total_complaints(),
+            "high_severity": self.repository.get_high_severity(),
+            "top_ward": self.repository.get_top_ward(),
+            "forecast": self.repository.get_forecast()
+        }
 
-            total_complaints=self.repository.get_total_complaints(),
+    async def get_trend(self):
 
-            high_severity=self.repository.get_high_severity(),
-
-            top_ward=self.repository.get_top_ward(),
-
-            forecast=self.repository.get_forecast()
-
-        )
+        return self.repository.get_trend()

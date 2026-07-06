@@ -1,231 +1,86 @@
 # 🏙️ CityPulse
 
-# AI-Powered Decision Intelligence Platform for Smart Cities
+> **AI-Powered Citizen Complaint Intelligence Platform for Smart Cities**
 
-Start : uv run uvicorn citypulse.main:app --reload
-> 🏆 Google Cloud Gen AI Hackathon 2026 Submission
+🏆 Google Cloud Gen AI Hackathon 2026
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![FastAPI](https://img.shields.io/badge/FastAPI-green)
+![Angular](https://img.shields.io/badge/Angular-red)
+![Google ADK](https://img.shields.io/badge/Google-ADK-blue)
 ![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-orange)
-![BigQuery](https://img.shields.io/badge/Google-BigQuery-blue)
-![Google Cloud](https://img.shields.io/badge/Google-Cloud-success)
-![Status](https://img.shields.io/badge/Phase-5%20Completed-success)
+![BigQuery](https://img.shields.io/badge/BigQuery-Google-blue)
+![Cloud Run](https://img.shields.io/badge/Cloud-Run-success)
 
 ---
 
-# 📖 Overview
+# 🚀 Overview
 
-CityPulse is an AI-powered Decision Intelligence Platform that helps city administrations transform citizen complaints into actionable insights using Google Cloud AI.
+CityPulse is an AI-powered platform that helps city authorities manage citizen complaints more efficiently.
 
-Instead of simply storing complaints, CityPulse:
+Instead of manually reviewing complaints, CityPulse uses **Google ADK** and **Gemini** to:
 
-- 🤖 Understands complaints using Gemini 2.5 Flash
-- 🏷️ Automatically classifies complaints
-- 🚨 Detects severity
-- 💾 Stores complaints locally in SQLite
-- ☁️ Synchronizes data with Google BigQuery
-- 📊 Answers natural language analytics questions
-- 🧠 Generates AI-powered recommendations
-
-Our vision is to move governments from **reactive governance** to **proactive AI-assisted decision making**.
+- 🤖 Understand complaints
+- 🏷️ Classify complaint category
+- 🚨 Detect severity
+- 💡 Generate AI recommendations
+- 📊 Visualize complaint trends
+- ☁️ Store analytics in BigQuery
 
 ---
 
-# 🎯 Problem Statement
+# ✨ Features
 
-Cities receive thousands of complaints every day through different channels.
-
-Unfortunately:
-
-- Complaints remain siloed.
-- Decision makers must manually analyze data.
-- Trends are difficult to identify.
-- Resource allocation is reactive instead of proactive.
-
-CityPulse leverages Gemini and Google Cloud to automatically understand complaints, analyze city-wide trends, and assist officials with intelligent recommendations.
-
----
-
-# 🚀 Current Features
-
-## ✅ Implemented
-
-- 🤖 Gemini Complaint Triage
-- 🏷️ Complaint Category Classification
-- 🚨 Severity Detection
-- 📦 SQLite Repository Pattern
-- 🧪 Synthetic Dataset Generator (Gemini)
-- ☁️ Google BigQuery Integration
-- 📊 AI Analytics Agent
-- 💬 Natural Language → SQL Generation
-- 📈 BigQuery Query Execution
-- 🧠 AI-generated Decision Intelligence
-- ⚡ FastAPI REST API
-- 📖 Swagger API Documentation
+- AI Complaint Triage
+- Severity Detection
+- Dashboard Analytics
+- Complaint Trend Visualization
+- BigQuery Integration
+- AI Recommendation Engine
+- REST APIs with FastAPI
+- Angular Dashboard
+- Cloud Run Deployment
+- Google ADK Multi-Agent Workflow
 
 ---
 
-## 🚧 Coming Soon
-
-- 📈 Forecasting Agent
-- 🚨 Anomaly Detection
-- 💡 Recommendation Agent
-- 🤖 Google ADK Multi-Agent Orchestrator
-- 🔍 RAG Knowledge Search
-- 📊 Looker Studio Dashboard
-- ☁️ Cloud Run Deployment
-
----
-
-# 🏗️ Current Architecture
+# 🏗️ Architecture
 
 ```text
-                    Citizen Complaint
-                           │
-                           ▼
-                 Gemini 2.5 Flash
-                           │
-                           ▼
-                    Triage Agent
-                           │
-                           ▼
-                  SQLite Repository
-                           │
-                           ▼
-                 BigQuery Uploader
-                           │
-                           ▼
-                  Google BigQuery
-                           │
-                           ▼
-                  Analytics Agent
-                           │
-                           ▼
-            AI Insights & Recommendations
+Citizen
+    │
+    ▼
+Angular Dashboard
+    │
+    ▼
+FastAPI Backend
+    │
+    ▼
+Google ADK Root Agent
+    │
+ ┌──┴───────────────┐
+ │                  │
+ ▼                  ▼
+Gemini         BigQuery
+ │                  │
+ └──────────┬───────┘
+            ▼
+ Dashboard & AI Insights
 ```
 
 ---
 
-# 🔮 Target Architecture
-
-```text
-                         Citizen Complaint
-                                │
-                                ▼
-                  Gemini 2.5 Flash (LLM)
-                                │
-                                ▼
-                   ADK Orchestrator Agent
-                                │
-      ┌─────────────────────────┼────────────────────────┐
-      │                         │                        │
-      ▼                         ▼                        ▼
- Triage Agent          Analytics Agent          Forecast Agent
-      │                         │                        │
-      └─────────────────────────┼────────────────────────┘
-                                │
-                                ▼
-                 Recommendation Agent
-                                │
-                                ▼
-                Explainability Agent
-                                │
-                                ▼
-                  Looker Studio Dashboard
-                                │
-                                ▼
-          Citizens • Officials • Decision Makers
-```
-
----
-
-# ☁️ Google Cloud Architecture
-
-```text
-                    FastAPI Backend
-                           │
-                           ▼
-                       Cloud Run
-                           │
-        ┌──────────────────┼──────────────────┐
-        │                  │                  │
-        ▼                  ▼                  ▼
-   Gemini API        Google BigQuery      Vertex AI
-        │                  │                  │
-        └──────────────────┼──────────────────┘
-                           │
-                           ▼
-                    Looker Studio
-```
-
----
-
-# 🤖 AI Agent Workflow
-
-```text
-User Question
-
-        │
-
-        ▼
-
-Analytics Agent
-
-        │
-
-        ▼
-
-Gemini 2.5 Flash
-
-        │
-
-        ▼
-
-BigQuery SQL
-
-        │
-
-        ▼
-
-Google BigQuery
-
-        │
-
-        ▼
-
-Query Result
-
-        │
-
-        ▼
-
-Gemini Explanation
-
-        │
-
-        ▼
-
-Decision Intelligence
-```
-
----
-
-# 🛠️ Technology Stack
+# 🛠️ Tech Stack
 
 | Layer | Technology |
-|---------|------------|
+|--------|------------|
+| Frontend | Angular 20 |
 | Backend | FastAPI |
-| Language | Python 3.14 |
-| AI Model | Gemini 2.5 Flash |
-| Cloud Analytics | BigQuery |
-| Local Database | SQLite |
-| Google Cloud | Cloud SDK |
-| Data Validation | Pydantic |
-| API Testing | Swagger UI |
-| Testing | Pytest |
-| Future Orchestration | Google ADK |
-| Future Dashboard | Looker Studio |
+| AI | Google ADK + Gemini 2.5 Flash |
+| Database | BigQuery, SQLite |
+| Cloud | Google Cloud Run |
+| Charts | Chart.js |
+| Language | Python |
 
 ---
 
@@ -233,143 +88,128 @@ Decision Intelligence
 
 ```text
 citypulse/
-
 ├── agents/
-│   ├── analytics_agent.py
-│   ├── generator_agent.py
-│   └── triage_agent.py
-│
 ├── api/
-│
 ├── cloud/
-│   ├── bigquery.py
-│   └── uploader.py
-│
-├── core/
-│
 ├── database/
-│
-├── graders/
-│
 ├── schemas/
-│
-├── scripts/
-│
+├── services/
+├── orchestrator/
 ├── tests/
-│
 ├── data/
-│
-├── README.md
-└── pyproject.toml
+└── main.py
 ```
 
 ---
 
-# 📍 Current Progress
+# 🚀 Getting Started
 
-| Phase | Status |
-|---------|--------|
-| ✅ Project Setup | Complete |
-| ✅ Gemini Integration | Complete |
-| ✅ Complaint Triage Agent | Complete |
-| ✅ SQLite Repository | Complete |
-| ✅ Synthetic Dataset Generation | Complete |
-| ✅ Google BigQuery Integration | Complete |
-| ✅ Analytics Agent | Complete |
-| 🚧 Forecast Agent | In Progress |
+## Backend
 
----
-
-# 🛣️ Development Roadmap
-
-## ✅ Phase 0
-
-Project Setup
-
-## ✅ Phase 1
-
-Gemini Complaint Triage
-
-## ✅ Phase 2
-
-SQLite Repository Layer
-
-## ✅ Phase 3
-
-Synthetic Dataset Generation
-
-## ✅ Phase 4
-
-Google BigQuery Integration
-
-## ✅ Phase 5
-
-Analytics Agent
-
-## 🚧 Phase 6
-
-Forecasting Agent
-
-## ⏳ Phase 7
-
-Recommendation Agent
-
-## ⏳ Phase 8
-
-Google ADK Multi-Agent Orchestrator
-
-## ⏳ Phase 9
-
-Looker Studio Dashboard
-
-## ⏳ Phase 10
-
-Cloud Run Deployment
-
----
-
-# 🎯 Example Analytics
-
-### User
-
-```
-Which ward has the highest complaints?
+```bash
+uv sync
+uv run uvicorn citypulse.main:app --reload
 ```
 
-### Generated SQL
-
-```sql
-SELECT
-    ward,
-    COUNT(*) AS total_complaints
-FROM
-    `project.citypulse.complaints`
-GROUP BY ward
-ORDER BY total_complaints DESC
-LIMIT 1;
-```
-
-### AI Response
+Backend:
 
 ```
-Ward 5 currently has the highest number of complaints.
+http://localhost:8000
+```
 
-Recommendation:
-Investigate the complaint categories in Ward 5 and prioritize municipal resources.
+Swagger:
+
+```
+http://localhost:8000/docs
 ```
 
 ---
 
-# 🎯 Vision
+## Frontend
 
-CityPulse aims to become an AI-powered Decision Intelligence Platform that enables governments to:
+```bash
+cd citypulse-ui
+npm install
+ng serve
+```
 
-- Predict city-wide issues before they occur.
-- Detect anomalies automatically.
-- Optimize municipal resource allocation.
-- Provide explainable AI recommendations.
-- Improve citizen satisfaction.
-- Build smarter and more resilient cities.
+Frontend:
+
+```
+http://localhost:4200
+```
+
+---
+
+## Google ADK Web
+
+```bash
+uv run adk web
+```
+
+---
+
+# 📸 Demo
+
+### Dashboard
+
+- Complaint Statistics
+- Trend Analysis
+- Forecast
+- AI Recommendations
+
+### APIs
+
+- `POST /triage`
+- `POST /chat`
+- `GET /dashboard`
+- `GET /dashboard/trend`
+
+### AI Workflow
+
+Citizen Complaint
+
+↓
+
+Google ADK Agent
+
+↓
+
+Gemini Analysis
+
+↓
+
+BigQuery
+
+↓
+
+Dashboard Insights
+
+---
+
+# 🌟 Why CityPulse?
+
+✅ AI-powered complaint understanding
+
+✅ Multi-agent architecture using Google ADK
+
+✅ Explainable recommendations
+
+✅ Real-time analytics dashboard
+
+✅ Cloud-native deployment
+
+✅ Scalable for smart cities
+
+---
+
+# 🔮 Future Enhancements
+
+- Image-based complaint analysis
+- Voice complaint support
+- Predictive analytics
+- GIS-based complaint maps
+- Automated work order generation
 
 ---
 
@@ -379,4 +219,4 @@ CityPulse aims to become an AI-powered Decision Intelligence Platform that enabl
 
 Software Engineer | Google Cloud Gen AI Hackathon 2026
 
-Built using **Google Cloud**, **Gemini 2.5 Flash**, **BigQuery**, **FastAPI**, and **Python**.
+Built with ❤️ using **Google ADK**, **Gemini**, **BigQuery**, **FastAPI**, **Angular**, and **Google Cloud Run**.

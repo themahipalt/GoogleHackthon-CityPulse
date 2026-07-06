@@ -3,6 +3,8 @@ from google.cloud import bigquery
 
 class DashboardRepository:
 
+
+
     def __init__(self):
 
         self.client = bigquery.Client()
@@ -91,3 +93,25 @@ class DashboardRepository:
 
             # Forecast model not created yet
             return 0
+        
+
+    def get_trend(self):
+
+        sql = f"""
+        SELECT
+            DATE(created_at) AS day,
+            COUNT(*) AS total
+        FROM `{self.complaints_table}`
+        GROUP BY day
+        ORDER BY day
+        """
+
+        rows = self.client.query(sql).result()
+
+        return [
+            {
+                "day": str(row.day),
+                "total": row.total
+            }
+            for row in rows
+        ]
